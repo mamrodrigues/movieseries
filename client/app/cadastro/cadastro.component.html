@@ -1,0 +1,63 @@
+<div class="container">
+
+    <h1 class="text-center">{{foto.titulo}}</h1><!-- novidade aqui -->
+
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+    <!--<form #formulario="ngForm" class="row" (submit)="cadastrar($event)"> -->
+    <form [formGroup]="formulario" class="row" (submit)="cadastrar($event)">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Título</label>
+                <!-- A diretiva 'ngModel' nada mais é que a atualização do model, de acordo com o input realizado na tag input
+                    Ou seja, incluir o '[(ngModel)] é a mesma coisa que atribuir um 'value' 
+                    ao objeto através do event.target.value cada vez que ocorre uma alteração do valor, conforme exemplo abaixo: -->
+                <!-- <input (input)="foto.titulo = $event.target.value" [value]="foto.titulo" class="form-control"  autocomplete="off"> -->
+
+                <!-- A diretiva 'formControlName' associa o objeto a um elemento declarado no FormBuilder do módulo
+                    Essa diretiva tem como propósito incluir multiplas validações de modo que não precisem ser feitas na tela, 
+                    tal como o exemplo abaixo, que declara o atributo required explicitamente no HTML
+                <input required name="titulo" [(ngModel)]="foto.titulo" #tituloLabel="ngModel" class="form-control" autocomplete="off">
+                <span *ngIf="tituloLabel.invalid" class="form-control alert-danger">
+                    Título obrigatório
+                </span> -->
+
+                <input name="titulo" [(ngModel)]="foto.titulo" formControlName="titulo" class="form-control" autocomplete="off">
+                <div *ngIf="formulario.controls.titulo.invalid">
+                    <span *ngIf="formulario.controls.titulo.errors.required" class="form-control alert-danger">
+                        Título obrigatório
+                    </span>
+                    <span *ngIf="formulario.controls.titulo.errors.minlength" class="form-control alert-danger">
+                        Título deve ter no mínimo 4 caracteres
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>URL</label>
+                <input name="url" [(ngModel)]="foto.url" formControlName="url" class="form-control" autocomplete="off">
+                <span *ngIf="formulario.controls.url.invalid" class="form-control alert-danger">
+                    URL obrigatória
+                </span>
+
+            </div>
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea formControlName="descricao" name="descricao" [(ngModel)]="foto.descricao" formControlName="descricao" class="form-control" autocomplete="off">
+                </textarea>
+            </div>
+
+            <!-- <button type="submit" class="btn btn-primary" [disabled]="formulario.form.invalid"> -->
+            <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">
+                Salvar
+            </button>
+            <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
+            <hr>
+        </div>
+
+        <div class="col-md-6">
+                <foto url="{{foto.url}}" titulo="{{foto.titulo}}">
+                </foto>
+            </div>
+    </form>
+</div>
