@@ -1,7 +1,7 @@
 # MovieSeries
 Aplicação de Gerenciamento de Filmes e Séries que você já assistiu.
 
-Projeto criado com intuito de entender as features do AngularJS 2 e do Node JS.
+Projeto criado com intuito de entender as features do Angular 2 e do Node JS.
 
 ---
 Faça o download do projeto com:
