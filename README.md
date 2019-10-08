@@ -9,30 +9,29 @@ Faça o download do projeto com:
 git clone https://github.com/mamrodrigues/movieseries.git
 ```
 
-Para realizar o build a aplicacação e download das dependências existentes no package.json, abrir na pasta client e executar o comando:
+Para realizar o build a aplicacação e download das dependências, abrir a pasta `client` e executar o comando:
+O mesmo comando deve ser executado na pasta `server`:
 ```
 npm install
 ```
 
-Para inicializar a aplicação e inicializar o servidor com o comando:
+Em seguida, para inicializar o server, executar o seguinte comando na pasta `server`.
+Caso haja algum desenvolvimento a ser realizado no client, também executar o comando na pasta `client`.
+Isso fará com que o Transpiler fique "escutando" as mudanças realizadas no TypeScript e "transformando-as" em JavaScript durante o desenvolvimento.
 ```
 npm start
 ```
 ---
-O mesmo procedimento deve ser feito na pasta server, para instalação das dependências.
 
-Após instalação, para inicializar a aplicação, deve-se abrir um terminal na pasta do server e realizar o comando npm start.
-Este comando irá subir um server na porta 5000 que será a porta da nossa aplicação
-
-Caso haja algum desenvolvimento a ser realizado no client, deve-se abrir um terminal na pasta client e realizar o comando npm start.
-Isso fará com que o Transpiler fique "escutando" as mudanças realizadas no TypeScript e "transformando-as" em JavaScript durante o desenvolvimento.
+Este comando irá subir um server na porta 5000 que será a porta da aplicação.
 Como existe um config do server que aponta para o client, essas mudanças já são alteradas sem necessidade de restartar o servidor.
 
-
+---
 ## Construído com
 
-* [ECMAScript 6](http://www.ecma-international.org/ecma-262/6.0/) - JavaScript
+* [Angular 2](https://devdocs.io/angular~2/) - Client
+* [NodeJS](https://nodejs.org/en/docs/) - Server
 
+---
 ## Autor
-
 * **Marcos Magalhães** - [mamrodrigues](https://github.com/mamrodrigues)
