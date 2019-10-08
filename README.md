@@ -8,7 +8,12 @@ Faça o download do projeto com:
 ```
 git clone https://github.com/mamrodrigues/movieseries.git
 ```
+---
+## Requisitos Mínimos
+* [npm e NodeJS](https://www.npmjs.com/get-npm)
+---
 
+## Executando 
 Para realizar o build a aplicacação e download das dependências, abrir a pasta `client` e executar o comando:
 O mesmo comando deve ser executado na pasta `server`:
 ```
